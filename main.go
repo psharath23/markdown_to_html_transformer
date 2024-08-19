@@ -26,6 +26,7 @@ func main() {
 	htmlTransformer.AddInlineRule(transformer.HyperlinkRegex, transformer.GetHyperLink)
 	htmlTransformer.AddLineRule(transformer.HeadingRegex, transformer.GetHeading)
 	htmlTransformer.AddDefaultLineRule(transformer.GetParagraph)
+	htmlTransformer.AddBlankLineRule(transformer.GetBlankLine)
 
 	html := htmlTransformer.Transform(string(markdownFile))
 
